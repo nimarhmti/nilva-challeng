@@ -1,0 +1,20 @@
+.dFlex {
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  height: 5.8rem;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: red; */
+  position: sticky;
+  top: 0;
+}
+.titleSection {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0 0.5rem;
+  justify-content: space-between;
+}

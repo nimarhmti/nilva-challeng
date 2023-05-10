@@ -1,0 +1,13 @@
+{
+  "NAVIGATION": {
+    "LIVE_RESULTS": "نتایج زنده ",
+    "SEARCH_PLACEHOLDER": "جستجو..."
+  },
+  "ROUTES": {
+    "COMPETITIONS": "مسابقات",
+    "DISCOVERIES": "اکتشاف",
+    "SOCCER": "فوتبال",
+    "LEAGUE": "لیگ‌ها",
+    "PROFILE": "پروفایل"
+  }
+}
