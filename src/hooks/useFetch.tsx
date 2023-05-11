@@ -10,7 +10,7 @@ interface initialStatus {
   isLoading: boolean;
   error: any;
 }
-export const useFetch = ({ url, queryParams }: Props) => {
+export const useFetch = () => {
   const [value, setValue] = useState<initialStatus>({
     data: null,
     isLoading: false,
@@ -20,11 +20,20 @@ export const useFetch = ({ url, queryParams }: Props) => {
     let didCancel = false;
     async function fetchData() {
       try {
-        // const response = await api.get(url + queryParams);
-        // if (!didCancel) setValue((preState) => {...preState});
-      } catch {}
+        setValue((preState) => ({ ...preState, isLoading: true }));
+        const fetchRequest = await api.get(
+          "/api/football/fixtures/?date=2023-01-03"
+        );
+        const response = await fetchRequest.data.all;
+        setValue((preState) => ({ ...preState, data: response }));
+      } catch (err) {
+        setValue((preState) => ({ ...preState, error: err }));
+      } finally {
+        setValue((preState) => ({ ...preState, isLoading: false }));
+      }
     }
-  }, [queryParams, url]);
+    fetchData();
+  }, []);
 
-  return <div>useFetch</div>;
+  return { ...value };
 };
