@@ -17,4 +17,8 @@ li {
 a {
   text-decoration: none;
   color: #868e96;
+  outline: none;
+}
+input {
+  font-family: IRANSans, "Courier New", Courier, monospace;
 }

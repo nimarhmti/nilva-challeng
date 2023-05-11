@@ -6,18 +6,18 @@ export const Navbar = () => {
 
   const navItemHandler = (item: routesModel) => (
     <li
-      className={`${Style.dFlex} ${Style.singleNavItem} ${
-        active == item.id ? Style.activeItem : null
-      }`}
+      className={`${Style.dFlex}`}
       key={item.id}
       id={item.id}
       onClick={() => setActive(item.id)}
     >
-      <>{item.icon}</>
       <a
-        className={`${active == item.id ? Style.activeItem : null}`}
+        className={`${Style.dFlex} ${Style.singleNavItem} ${
+          active == item.id ? Style.activeItem : null
+        }`}
         href={item.path}
       >
+        <>{item.icon}</>
         {item.label}
       </a>
     </li>

@@ -2,18 +2,8 @@ import React, { useState } from "react";
 import Style from "./Tabbar.module.css";
 import text from "../../assets/lan/persian.json";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import {
-  Typography,
-  TextField,
-  InputAdornment,
-  Tabs,
-  Tab,
-  Box,
-  createTheme,
-} from "@mui/material";
+import { Tabs, Tab, Box, createTheme } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { AccountCircle } from "@mui/icons-material";
-import { useTheme } from "@emotion/react";
 interface item {
   label: string;
   value: string;
@@ -27,20 +17,14 @@ const league_item: item[] = [
   { label: "لیبل اول", value: "five" },
 ];
 
-// let theme = createTheme({
-//   components: {
-//     MuiTab: {
-//       styleOverrides: {
-//         root: {
-//           "&.Mui-selected": {
-//             backgroundColor: "#fff",
-//             color: "#000",
-//           },
-//         },
-//       },
-//     },
-//   },
-// });
+const SX_STYLE = {
+  fontSize: "1.2rem",
+  position: "absolute",
+  right: "0.6rem",
+  transform: "rotateY(3.142rad)",
+  color: "#adb5bd",
+};
+
 export const TabBar = () => {
   const [value, setValue] = useState("one");
 
@@ -61,20 +45,10 @@ export const TabBar = () => {
         <h5>{text.NAVIGATION.LIVE_RESULTS}</h5>
         <AccessTimeIcon />
       </div>
-      <TextField
-        placeholder={text.NAVIGATION.SEARCH_PLACEHOLDER}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon sx={{ fontSize: "1rem" }} />
-            </InputAdornment>
-          ),
-          style: {
-            height: "1.5rem",
-            margin: "0 0.5rem",
-          },
-        }}
-      />
+      <div className={`${Style.dFlex} ${Style.inputBox}`}>
+        <SearchIcon sx={SX_STYLE} />
+        <input type="text" placeholder={text.NAVIGATION.SEARCH_PLACEHOLDER} />
+      </div>
       <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
         <Tabs
           value={value}
