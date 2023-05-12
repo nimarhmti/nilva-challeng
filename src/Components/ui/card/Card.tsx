@@ -90,7 +90,15 @@ export const Card = ({ leagueInfo }: any) => {
       >
         <div className={`${Style.dFlex}`}>
           <img src={logo} className={Style.teamIcon} />
-          <h6 style={{ color: "#4c6ef5", fontSize: "0.5rem" }}>{name}</h6>
+          <h6
+            style={{
+              color: "#4c6ef5",
+              fontSize: "0.5rem",
+              marginRight: "0.4rem",
+            }}
+          >
+            {name}
+          </h6>
         </div>
         {open ? (
           <ExpandLess sx={{ fontSize: "1rem" }} color="action" />

@@ -6,7 +6,7 @@ interface initialStatus {
   isLoading: boolean;
   error: any;
 }
-//
+
 export const useFetch = (url: string, queryParams: string) => {
   const [value, setValue] = useState<initialStatus>({
     data: null,
@@ -36,5 +36,3 @@ export const useFetch = (url: string, queryParams: string) => {
 
   return { ...value };
 };
-
-// ?date=2023-05-12"

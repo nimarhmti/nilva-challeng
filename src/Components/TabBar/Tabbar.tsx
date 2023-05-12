@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Style from "./Tabbar.module.css";
 import text from "../../assets/lan/persian.json";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import { Tabs, Tab, Box, createTheme } from "@mui/material";
+import { Tabs, Tab, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { persianDateGenerator } from "../../utils/DateFormat";
 interface item {
@@ -12,14 +12,6 @@ interface item {
 interface Props {
   changeDate: (Date: string) => void;
 }
-
-const league_item: item[] = [
-  { label: "لیبل اول", value: "one" },
-  { label: "لیبل اول", value: "two" },
-  { label: "لیبل اول", value: "three" },
-  { label: "لیبل اول", value: "four" },
-  { label: "لیبل اول", value: "five" },
-];
 
 const SX_STYLE = {
   fontSize: "1.2rem",

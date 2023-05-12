@@ -5,6 +5,7 @@
 .contentContainer {
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 3rem;
   padding: 0.5rem 0.7rem;
   z-index: 2;
 }

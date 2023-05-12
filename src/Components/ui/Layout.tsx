@@ -1,19 +1,12 @@
 import React, { useState, FC, PropsWithChildren } from "react";
-import text from "../../assets/lan/persian.json";
+
 import Style from "./Layout.module.css";
 import { TabBar } from "../TabBar/Tabbar";
 import { Navbar } from "../Navbar/Navbar";
 import { useFetch } from "../../hooks/useFetch";
 import { Card } from "./card/Card";
 import { Skeleton, Stack } from "@mui/material";
-import {
-  DateFormatter,
-  formatDateToY_M_D,
-  get_all_dates,
-  persianDateGenerator,
-} from "../../utils/DateFormat";
-import moment from "moment";
-// import { text } from "stream/consumers";
+import { formatDateToY_M_D } from "../../utils/DateFormat";
 export interface apiModel {
   api_id: string;
   fixtures: any;
@@ -37,7 +30,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
   );
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ width: "100%" }}>
       <TabBar changeDate={changDateHandler} />
       <div className={`${Style.dFlex} ${Style.contentContainer}`}>
         {isLoading ? (
@@ -45,6 +38,12 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
             <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
             <Skeleton variant="rectangular" width={370} height={60} />
             <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+            <Skeleton variant="rectangular" width={370} height={60} />
+            <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+            <Skeleton variant="rectangular" width={370} height={60} />
+            <Skeleton variant="rectangular" width={370} height={60} />
+            <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+            <Skeleton variant="rectangular" width={370} height={60} />
             <Skeleton variant="rectangular" width={370} height={60} />
             <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
             <Skeleton variant="rectangular" width={370} height={60} />
