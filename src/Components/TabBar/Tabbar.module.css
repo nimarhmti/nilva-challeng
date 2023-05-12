@@ -11,6 +11,7 @@
   /* background-color: red; */
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 .titleSection {
   width: 100%;

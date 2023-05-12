@@ -16,9 +16,11 @@
     "@types/react-dom": "^18.2.4",
     "axios": "^1.4.0",
     "json-loader": "^0.5.7",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "react-window": "^1.8.9",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -45,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-window": "^1.8.5",
+    "persian-date": "^1.1.0"
   }
 }

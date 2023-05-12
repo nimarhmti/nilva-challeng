@@ -9,6 +9,7 @@ html {
   direction: rtl;
   font-size: 30px;
   background-color: #e9ecef;
+  scroll-behavior: smooth;
 }
 ul,
 li {

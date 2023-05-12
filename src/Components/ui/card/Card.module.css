@@ -1,2 +1,43 @@
-.cardContainer {
+.dFlex {
+  display: flex;
+  align-items: center;
+}
+.absPosition {
+  position: absolute;
+}
+.absPositionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.teamIcon {
+  height: 1rem;
+  width: 1rem;
+}
+.homeTeamIcon {
+  transform: translate(74%, -50%);
+}
+.awayTeamIcon {
+  transform: translate(-176%, -50%);
+}
+.teamTitle {
+  font-size: 0.5rem;
+  color: 495057;
+  font-weight: 500;
+}
+.homeTeamTitle {
+  position: absolute;
+  top: 25%;
+  left: 68%;
+}
+.awayTeamTitle {
+  position: absolute;
+  top: 25%;
+  right: 68%;
+}
+.time {
+  font-size: 0.5rem;
+  color: 495057;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
 }

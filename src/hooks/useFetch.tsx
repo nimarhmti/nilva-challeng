@@ -22,7 +22,7 @@ export const useFetch = () => {
       try {
         setValue((preState) => ({ ...preState, isLoading: true }));
         const fetchRequest = await api.get(
-          "/api/football/fixtures/?date=2023-01-03"
+          "/api/football/fixtures/?date=2023-05-12"
         );
         const response = await fetchRequest.data.all;
         setValue((preState) => ({ ...preState, data: response }));
