@@ -61,7 +61,7 @@ export const Card = ({ leagueInfo }: any) => {
         className={`${Style.teamIcon} ${Style.absPositionCenter} ${Style.awayTeamIcon}`}
       />
       <span className={`${Style.awayTeamTitle} ${Style.teamTitle}`}>
-        {item.away.name}
+        {item.away.name.substring(0, 10) + "..."}
       </span>
     </ListItemButton>
   );

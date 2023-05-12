@@ -4,9 +4,13 @@ import text from "../../assets/lan/persian.json";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { Tabs, Tab, Box, createTheme } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { persianDateGenerator } from "../../utils/DateFormat";
 interface item {
   label: string;
   value: string;
+}
+interface Props {
+  changeDate: (Date: string) => void;
 }
 
 const league_item: item[] = [
@@ -25,18 +29,18 @@ const SX_STYLE = {
   color: "#adb5bd",
 };
 
-export const TabBar = () => {
-  const [value, setValue] = useState("one");
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+export const TabBar = ({ changeDate }: Props) => {
+  const [value, setValue] = useState<number>(1);
+  const DATES = persianDateGenerator();
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-  const leagueMapHandler = (item: any, index: any) => (
+  const leagueMapHandler = (item: any) => (
     <Tab
       label={item.label}
-      key={index}
-      value={item.value}
+      key={item.id}
       sx={{ fontSize: "0.7rem" }}
+      onClick={() => changeDate(item.id)}
     />
   );
   return (
@@ -60,14 +64,12 @@ export const TabBar = () => {
               height: "0.15rem",
               borderTopLeftRadius: "5px",
               borderTopRightRadius: "5px",
-              display: "flex",
-              width: "20px",
             },
           }}
           aria-label="secondary tabs example"
           scrollButtons={false}
         >
-          {league_item.map(leagueMapHandler)}
+          {DATES.map(leagueMapHandler)}
         </Tabs>
       </Box>
     </nav>
