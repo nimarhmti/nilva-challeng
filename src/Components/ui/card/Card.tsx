@@ -24,6 +24,11 @@ export interface Props {
   season: string;
 }
 
+const subStringLimitation = (text: string) => {
+  if (text.length > 10) return text.substring(1, 10) + "...";
+  else return text;
+};
+
 export const Card = ({ leagueInfo }: any) => {
   const [open, setOpen] = React.useState(true);
   // data destructuring
@@ -45,7 +50,7 @@ export const Card = ({ leagueInfo }: any) => {
       key={item.id}
     >
       <span className={`${Style.teamTitle} ${Style.homeTeamTitle}`}>
-        {item.home.name}
+        {subStringLimitation(item.home.name)}
       </span>
       <img
         src={item.home.logo}
@@ -61,7 +66,7 @@ export const Card = ({ leagueInfo }: any) => {
         className={`${Style.teamIcon} ${Style.absPositionCenter} ${Style.awayTeamIcon}`}
       />
       <span className={`${Style.awayTeamTitle} ${Style.teamTitle}`}>
-        {item.away.name.substring(0, 10) + "..."}
+        {subStringLimitation(item.away.name)}
       </span>
     </ListItemButton>
   );
